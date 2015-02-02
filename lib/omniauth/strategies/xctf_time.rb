@@ -5,6 +5,7 @@ require 'socket'       # for SocketError
 require 'timeout'      # for Timeout::Error
 require 'faraday'      # for Faraday::Error::TimeoutError and Faraday::Error::ConnectionFailed
 require 'multi_json'   # for MultiJson::DecodeError
+require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
