@@ -13,17 +13,18 @@ module OmniAuth
     # You must generally register your application with the provider and
     # utilize an application id and secret in order to authenticate using
     # OAuth 2.0.
-    class OAuth2
+    class xctf_time < OmniAuth::Strategies::OAuth2
       include OmniAuth::Strategy
+      option :name, "xctf_time"
 
       args [:client_id, :client_secret]
 
-      option :client_id, nil
-      option :client_secret, nil
-      option :client_options, {}
+      option :client_id, "vmQsn_0zwSxW4RnoaXwMOVsV-zTqeg2isVDRgUqM"
+      option :client_secret, "W1KB;XGSfgh2=J=JkcD:4U?i.ZxRJ!ns5LUMr3oIgPwgRPfZJhjefoN0ic2ifx?XIx3vk5n5S;5mwR4Y=rzlyO36PgIZi-_MPenMfL_;OP4E:zxaznpBUVseGd.p:!uJ"
+      option :client_options, {:site => 'https://time.xctf.org.cn', :authorize_url => '/oauth/o/authorize', :token_url => '/oauth/o/access_token'}
       option :authorize_params, {}
       option :authorize_options, [:scope]
-      option :token_params, {}
+      option :token_params, { :parse => :json }
       option :token_options, []
       option :auth_token_params, {}
       option :provider_ignores_state, false
@@ -128,4 +129,4 @@ module OmniAuth
   end
 end
 
-OmniAuth.config.add_camelization 'oauth2', 'OAuth2'
+# OmniAuth.config.add_camelization 'oauth2', 'OAuth2'
